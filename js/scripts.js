@@ -63,7 +63,7 @@ function updateCount()
 function endGame()
 {
 	 $('#throw').addClass('disabled').unbind();
-	 $("#msg").html("You have completed this task.<br>Please wait for the experiment to contine.");
+	 $("#msg").html("You have completed this task.<br>Please wait for the experiment to continue.");
 
 }
 
