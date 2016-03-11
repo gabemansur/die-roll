@@ -1,4 +1,9 @@
 <?php
+require_once('lib/config.php');
+require_once('lib/db_con.php');
+require_once('lib/validate.php');
+require_once('lib/functions.php');
+
   if(isset($_GET['id']) && $_GET['id'] != ''){
     $s_id = alphanumeric_only($_GET['id']);
   }
