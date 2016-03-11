@@ -1,0 +1,31 @@
+.row {
+
+  text-align: center;
+
+}
+
+#die {
+  margin: 24px 0 24px 0;
+}
+
+label {
+  margin-right: 12px;
+  font-size: 140%;
+}
+
+input[type="radio"] {
+  margin-top: 6px;
+}
+
+#roll-count {
+  margin-top: 8px;
+  color: #43464D;
+}
+
+#roll-count span {
+  color: #000;
+}
+
+#msg {
+  color: #e10019;
+}
