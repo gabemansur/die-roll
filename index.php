@@ -65,11 +65,12 @@ require_once('lib/functions.php');
         <div class="col-lg-12">
           <form id="die_form">
             <?php if($cond == 'transparent'):?>
-            <label class="radio-inline"><input type="radio" name="direction" value="U">U</label>
-            <label class="radio-inline"><input type="radio" name="direction" value="D">D</label>
+            <label class="radio-inline"><input type="radio" name="side" value="U">U</label>
+            <label class="radio-inline"><input type="radio" name="side" value="D">D</label>
             <?php endif; ?>
             <input type="hidden" id="s_id" name="s_id" value="<?php echo $s_id;?>">
             <input type="hidden" id="result" name="result">
+            <input type="hidden" id="cond" name="cond" value="<?php echo $cond; ?>">
             <button type="button" id="throw" class="btn btn-primary">Throw Die</button>
           </form>
           <p id="roll-count">Roll <span id="count"></span> of <span id="max"></span></p>

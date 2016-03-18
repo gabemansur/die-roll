@@ -12,17 +12,18 @@ $(document).ready(function(){
 		// check to see that one is selected, and if not,
 		// display a warning.
 		if(cond == 'transparent' &&
-			!$("input:radio[name='direction']").is(':checked')){
+			!$("input:radio[name='side']").is(':checked')){
 
-				$("#msg").html("Please pick a direction.<br>Choose 'U' for up and 'D' for down");
+				$("#msg").html("Please pick a side.<br>Choose 'U' for up and 'D' for down");
 		}
 
 		// Otherwise, clear any existing warning and
 		// throw the dice
 		else {
 			$("#msg").html('');
-			doThrow();
-			sendData();
+			result = doThrow();
+			$("#result").val(result);
+			sendData($("#die_form").serialize());
 			updateCount();
 		}
 	})
@@ -37,17 +38,16 @@ function doThrow()
 
 	$("#die").rotate({ count:4, duration:0.2, easing:'ease-out' });
 
-	setTimeout(function () {
-
 	k = getRandomInt(1, 6);
-	$("#die").attr("src", "img/die_" + k + ".jpg");
 	$("#result").val(k);
 
-	result = $("#die_form").serialize();
-	console.log(result);
+	setTimeout(function () {
+
+	$("#die").attr("src", "img/die_" + k + ".jpg");
 
 	}, 600);
 
+	return k;
 }
 
 function updateCount()
@@ -70,7 +70,7 @@ function endGame()
 
 function sendData(data)
 {
-
+	console.log("D: " + data);
 	$.ajax( {
 		type: "POST",
 		url: 'process_throw.php',
